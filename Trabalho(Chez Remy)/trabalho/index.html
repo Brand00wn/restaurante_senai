@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chez Remy - Restaurante Gourmet</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div  id="meuPopup" class="popup">
+        <h3>Informe seu nome para finalizar o pedido:</h3>
+        <input type="text" id="nomeCliente" placeholder="Nome completo" />
+        <button id="cancelarNomeBtn">Cancelar</button>
+        <button id="confirmarNomeBtn">Confirmar</button>
+      </div>
+    <div id="loading-screen">
+        <div class="welcome-box">
+            <img src="img/logo.png" alt="logo chez remy">
+          <h1>Bem-vindo!</h1>
+          <p>Prepare-se para uma experiência deliciosa 🍽️</p>
+        </div>
+      </div>
+    <header>
+        <a onclick="mostrar('bem-vindo')"><img src="img/logo.png" alt="Chez Remy" id="logo"></a>
+        <h1>Chez Remy</h1>
+        <p>Onde até ratos são chefs profissionais</p>
+    </header>
+    
+    <nav>
+        <button onclick="mostrar('cardapio')">Cardápio</button>
+        <button onclick="mostrar('reserva')">Reservar Mesa</button>
+        <button onclick="mostrar('contato')">Contato</button>
+        <button onclick="mostrar('pedidosfeitos')">pedidos feitos</button>
+    </nav>
+    <main>
+        <section id="bem-vindo">
+            <h2>Seja bem-vindo ao Chez Remy</h2>
+            <p>Uma experiência gastronômica única, comandada pelos melhores ratos da França.</p>
+            <br>
+            <div  class="historia">
+                <h2>Nossa História</h2>
+                <img src="img/bannerparis.jpg" alt="banner de paris">
+                <p>
+                    Desde os becos escondidos de Paris até o centro das atenções na alta gastronomia, o Chez Remy nasceu do improvável — e se transformou no extraordinário.<br><br>
+            
+                    Guiados pela filosofia de que <strong>“qualquer um pode cozinhar”</strong>, criamos um espaço onde tradição e inovação se encontram em perfeita harmonia. No Chez Remy, não servimos apenas pratos; proporcionamos experiências sensoriais cuidadosamente elaboradas, onde cada aroma, textura e sabor desperta memórias e emoções.<br><br>
+            
+                    O nosso restaurante é um tributo à coragem, à criatividade e à busca incessante pela excelência. Sob o comando de chefs surpreendentes, preparamos receitas que respeitam a autenticidade da culinária francesa, mas que também ousam, encantam e transformam o ordinário em sublime.<br><br>
+            
+                    Em um ambiente acolhedor e sofisticado, convidamos você a deixar-se envolver pelos encantos de uma experiência gastronômica única, onde o inesperado se revela em cada detalhe, e a paixão pela cozinha se expressa com delicadeza e intensidade.<br><br>
+            
+                    No Chez Remy, acreditamos que <strong>o verdadeiro luxo está nos momentos compartilhados</strong> — uma taça de vinho, um prato bem servido, um sorriso sincero.<br><br>
+            
+                    Por isso, cada cliente que atravessa nossas portas é recebido como parte de nossa história, como protagonista dessa celebração à arte de bem viver.<br><br>
+            
+                    <strong>Venha descobrir o sabor da ousadia, a elegância da tradição e a magia de um lugar onde os sonhos ganham forma, aroma e sabor.</strong><br><br>
+            
+                    <strong>Chez Remy: uma experiência gastronômica memorável, onde o inesperado é sempre bem-vindo.</strong>
+                </p>
+                <h2>Veja nosso Chef principal cozinhando</h2>
+
+                <div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/sJCOaq1TWoM?si=zKwShO4J_rXvTq8w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+            </div>
+            <br>
+        </section>
+
+        <section id="pedidosfeitos" style="display: none;">
+            
+        </section>
+
+        <section id="cardapio" style="display:none;">
+            <h2>Cardápio</h2><br>
+            <select id="filtroCategoria" onchange="filtrarCategoria()">
+                <option value="">Todas</option>
+                <option value="Entrada">Entradas</option>
+                <option value="Principal">Pratos Principais</option>
+                <option value="Sobremesa">Sobremesas</option>
+                <option value="Bebida">Bebidas</option>
+            </select>
+            <br><br>
+            <div id="lista-cardapio"></div>
+            <h3>Seu Pedido:</h3><br>
+            <div id="carrinho"></div>
+            <div id="pedido-itens"></div>
+            <div id="pedido-total">Total: R$ 0;00</div>
+            <textarea id="observacoes" placeholder="Observações adicionais" rows="5" cols="15"></textarea>
+            <br>
+            <button onclick="finalizarPedido()" id="btn-flinalizar">Finalizar Pedido</button>
+            <br>
+        </section>
+
+        <section id="reserva" style="display:none;">
+            <h2>Reservar Mesa</h2>
+            <input type="text" id="nomeReserva" placeholder="Seu nome"><br>
+            <input type="date" id="dataReserva"><br>
+            <input type="time" id="horaReserva"><br>
+            <input type="number" id="pessoasReserva" placeholder="Número de pessoas"><br>
+            <button onclick="enviarReserva()">Reservar</button>
+        </section>
+
+        <section id="contato" style="display:none;">
+            <h2>Contato</h2>
+            <input type="text" id="nomeContato" placeholder="Seu nome"><br>
+            <input type="email" id="emailContato" placeholder="Seu email"><br>
+            <textarea id="mensagemContato" placeholder="Sua mensagem"></textarea><br>
+            <button onclick="enviarContato()">Enviar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Chez Remy. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
