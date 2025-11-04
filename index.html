@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ichiraku Sushi</title>
+  <link rel="website icon" type="jpg"
+  href="img/logo.jpg">
+  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <a href="#welcome-message" title="Voltar para a mensagem de boas-vindas">
+      <img src="img/logo.jpg" alt="Logo Ichiraku Sushi" id="logo" class="logo" />
+    </a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#" data-target="cardapio">CARDÁPIO</a></li>
+        <li><a href="#" data-target="pedidos">PEDIDOS</a></li>
+        <li><a href="#" data-target="contato">CONTATO</a></li>
+        <li id="carrinho-link">
+          <a href="#" data-target="carrinho">🛒 <span id="contador-carrinho">0</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="welcome-message">
+    <h2>Bem-vindo ao Ichiraku Sushi!</h2>
+    <p>Explore nosso cardápio, veja seus pedidos ou entre em contato conosco.</p>
+  </div>
+
+  <main>
+    <section id="cardapio">
+      <h2>Cardápio</h2>
+      <div class="filtros">
+        <button class="filtro" data-categoria="todos" id="filtro-todos">Todos</button>
+        <button class="filtro" data-categoria="entradas">Entradas</button>
+        <button class="filtro" data-categoria="prato-principal">Pratos Principais</button>
+        <button class="filtro" data-categoria="sobremesas">Sobremesas</button>
+        <button class="filtro" data-categoria="bebidas">Bebidas</button>
+      </div>
+      <div class="container-cardapio" id="lista-pratos"></div>
+    </section>
+
+    <section id="carrinho" style="display:none; margin-top: 2rem;">
+      <h2>Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+      <button id="limpar-carrinho">Limpar Carrinho</button>
+      <div id="finalizar-compra">
+        <button id="btn-finalizar">Finalizar Pedido</button>
+      </div>
+    </section>
+
+    <section id="pedidos" style="display:none;">
+      <h2>Pedidos Finalizados</h2>
+      <ul id="lista-pedidos">
+
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Telefone: (11) 4002-8922</p>
+      <p>Email: ichirakusushi@gmail.com</p>
+      <p>Endereço: Rua do Sushi, 123 - Vila Japonesa</p>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
